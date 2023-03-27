@@ -1,0 +1,6 @@
+<div class="dropdown">
+    <span [ngClass]="node.items? 'cursor ' : ''" (click)="toggle()">{{ node.title }} {{node.items? '>' : ''}} </span>
+    <ng-container *ngIf="node.items && isOpen">
+        <app-tree-data-details *ngFor="let child of node.items" [node]="child"></app-tree-data-details>
+    </ng-container>
+</div>
